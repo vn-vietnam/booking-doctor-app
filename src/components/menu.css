@@ -1,0 +1,40 @@
+.menu-bar, .menu-overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	padding: 2em;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 1;
+}
+.menu-logo, .menu-open {
+	color: red;
+}
+.menu-overlay{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	padding: 2em;
+	background-color: rgb(130, 243, 0);
+	z-index: 2;
+	display: flex;
+	clip-path: polygon(0 0, 100% 0, 100% 0%,0 0);
+}
+
+.menu-link-item{
+	width: max-content;
+	clip-path: polygon(0 0, 100% 0, 100% 100%,0 100%);
+}
+.menu-item-hodlder{
+	position: relative;
+}
+.menu-item-hodlder a{
+	font-size: 80px;
+	font-family: 400;
+	letter-spacing: -0.02;
+	line-height: 85%;
+}
