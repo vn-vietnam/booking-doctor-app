@@ -30,7 +30,7 @@ function DoctorSection({ dataDoctor, heading }) {
 							<div className="text-blue-600 font-bold">
 								{doctor?.attributes?.Address}
 							</div>
-							<Link href={"http://localhost:3000/details/" + doctor?.id}>
+							<Link href={"https://booking-doctor-app.vercel.app/" + doctor?.id}>
 								<Button className="w-full bg-transparent text-blue-600 rounded-lg border-blue-700 border-[1px] hover:bg-blue-500 hover:text-white">
 									Book now
 								</Button>
