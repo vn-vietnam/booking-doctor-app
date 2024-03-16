@@ -6,7 +6,7 @@ This is a Booking-doctor project
 ![My Image](./public/4.png)
 ![My Image](./public/5.png)
 
-## Teach
+## Tech
 
 Frontend: `Nextjs`, `Tailwindcss`
 
