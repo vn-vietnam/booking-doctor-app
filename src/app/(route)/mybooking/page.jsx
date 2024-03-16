@@ -13,12 +13,12 @@ function page() {
 
 	const getBookingUser = () => {
 		api.getBookingByEmail(user?.email).then((res) => {
-			// console.log(res?.data?.data);
+			console.log(res?.data?.data);
 			setGetBooking(res?.data?.data);
 		});
 	};
 	let dateNow = new Date();
-	// console.log(dateNow);
+	console.log(dateNow);
 	const filterBooking = (type) => {
 		const result = getBooking?.filter((e) =>
 			type === "upcoming"
@@ -37,10 +37,10 @@ function page() {
 		<div className="border-[1px]  ml-3 rounded-lg p-4">
 			<Tabs defaultValue="account" className="w-full">
 				<TabsList className="">
-					<TabsTrigger value="upcoming">Up Coming</TabsTrigger>
-					<TabsTrigger value="expired">Expired</TabsTrigger>
+					<TabsTrigger value="upcoming">Mới đăng kí</TabsTrigger>
+					<TabsTrigger value="expired">Hết hạn</TabsTrigger>
 				</TabsList>
-				<TabsContent value="upcoming">
+				<TabsContent value="upcoming" >
 					<BookingList
 						type="upcoming"
 						dataBooking={filterBooking("upcoming")}
@@ -54,6 +54,7 @@ function page() {
 						updateBooking={() => getBookingUser()}
 					/>
 				</TabsContent>
+				
 			</Tabs>
 		</div>
 	);

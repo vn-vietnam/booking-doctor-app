@@ -2,13 +2,17 @@
 import api from "@/app/_utils/api";
 import { Button } from "@/components/ui/button";
 import {
+	CircleCheckBig,
 	Facebook,
+	FileType,
 	Instagram,
 	Linkedin,
 	Mail,
 	MapPinned,
 	Phone,
 	Twitter,
+	Type,
+	TypeIcon,
 } from "lucide-react";
 import Image from "next/image";
 import { useParams } from "next/navigation";
@@ -25,7 +29,7 @@ function page() {
 
 	const getCategoriesList = () => {
 		api.getDetailsDoctor(Number(param?.id)).then((res) => {
-			// console.log(res.data.data);
+			console.log(res.data.data);
 			setCategory(res?.data?.data);
 		});
 	};
@@ -49,6 +53,15 @@ function page() {
 							<div className="flex gap-2 ">
 								<MapPinned />
 								<div>{getCategory?.attributes?.Address}</div>
+							</div>
+							<div className="flex gap-2 ">
+								<CircleCheckBig />
+								<div>
+									{
+										getCategory?.attributes?.categories?.data[0]?.attributes
+											?.Name
+									}
+								</div>
 							</div>
 							<div className="flex gap-2">
 								<Phone />
@@ -81,9 +94,9 @@ function page() {
 							</div>
 						</div>
 					</div>
-					<div className="flex flex-col w-full my-4">
-						<div className="text-3xl font-bold">About me</div>
-						<div>{getCategory?.attributes?.About}</div>
+					<div className="flex flex-col w-full my-4 gap-3">
+						<div className="text-3xl font-bold">Thông tin bác sĩ</div>
+						<div className="">{getCategory?.attributes?.About}</div>
 					</div>
 				</>
 			) : (

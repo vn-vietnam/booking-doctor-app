@@ -14,6 +14,7 @@ import { Calendar } from "@/components/ui/calendar";
 import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import api from "@/app/_utils/api";
 import { toast } from "sonner";
+import { redirect } from "next/navigation";
 const dataTime = [
 	{
 		id: 1,
@@ -96,9 +97,9 @@ function BookingSection({ doctor }) {
 		};
 		api.postBooking(data).then((e) => {
 			if (e) {
-				toast("Booking has been created.");
+				toast("Lịch hẹn đã được tạo");
 			} else {
-				toast("Some thing wrong. Please try again!");
+				toast("Lỗi! Vui lòng thử lại");
 			}
 		});
 	};
@@ -114,29 +115,32 @@ function BookingSection({ doctor }) {
 		<>
 			<Dialog>
 				<DialogTrigger asChild>
-					<Button variant="outline">Booking Now</Button>
+					<Button variant="outline">Đặt lịch hẹn</Button>
 				</DialogTrigger>
-				<DialogContent className="sm:max-w-[455px] ">
+				<DialogContent className="max-w-[330px] sm:h-[800px] h-[400px] overflow-x-hidden sm:overflow-hidden">
 					<DialogHeader>
-						<DialogTitle>From Booking</DialogTitle>
-						<DialogDescription>Please select all information</DialogDescription>
+						<DialogTitle>Phiếu hẹn</DialogTitle>
+						<DialogDescription>
+							Vui lòng điền thông tin vào chỗ trống
+						</DialogDescription>
 					</DialogHeader>
-					<div className="grid gap-4 py-4">
-						<div className="flex gap-4 flex-col md:flex-row">
+					<div className="flex flex-col gap-3">
+						<div className="flex gap-4 flex-col">
 							<Calendar
 								mode="single"
 								selected={date}
 								onSelect={setDate}
 								className="rounded-md border"
+								disabled={(date) =>
+									date < new Date() || date > new Date("2024-05-01")
+								}
 							/>
 							<select
 								name="cars"
 								id="cars"
 								onChange={handleTimeChange}
-								className="border-[1px] h-[50px] rounded-lg"
+								className="border-[1px] h-[50px] rounded-lg p-2"
 							>
-								{/* <option >Volvo</option> */}
-
 								{dataTime.map((t, index) => (
 									<option defaultValue="7:00 AM" key={index} value={t.time}>
 										{t.time}
@@ -145,9 +149,6 @@ function BookingSection({ doctor }) {
 							</select>
 						</div>
 						<div className="grid grid-cols-4 items-center gap-4">
-							{/* <Label htmlFor="name" className="text-right">
-								Note
-							</Label> */}
 							<textarea
 								onChange={(e) => setNote(e.target.value)}
 								id="note"
@@ -155,12 +156,6 @@ function BookingSection({ doctor }) {
 								placeholder="Note ..."
 							/>
 						</div>
-						{/* <div className="grid grid-cols-4 items-center gap-4">
-							<Label htmlFor="username" className="text-right">
-								Username
-							</Label>
-							<Input id="username" value="@peduarte" className="col-span-3" />
-						</div> */}
 					</div>
 					<DialogFooter>
 						<Button

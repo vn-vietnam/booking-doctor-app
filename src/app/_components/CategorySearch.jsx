@@ -23,13 +23,11 @@ function CategorySearch() {
 			<div className="p-4 md:p-12 lg:px-16 lg:pt-24">
 				<div className="mx-auto max-w-lg text-center">
 					<h2 className="text-2xl font-bold text-gray-900 md:text-3xl">
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit
+						Ứng dụng được cập nhật liên tục, tiện lợi và nhanh chóng
 					</h2>
 
 					<p className="hidden text-gray-500 sm:mt-4 sm:block">
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolor
-						officia blanditiis repellat in, vero, aperiam porro ipsum laboriosam
-						consequuntur exercitationem incidunt tempora nisi?
+						Nhắm cung cấp dịch vụ tốt nhất cho người bệnh, mọi người có thể đăng kí Email để được cập nhật thêm những thông tin bệnh lí, các bác sĩ tham gia ứng dụng
 					</p>
 				</div>
 
@@ -42,7 +40,7 @@ function CategorySearch() {
 
 							<input
 								type="email"
-								placeholder="Email address"
+								placeholder="Địa chỉ Email "
 								className="w-full rounded-md border-gray-200 bg-white p-3 text-gray-700 shadow-sm transition focus:border-white focus:outline-none focus:ring focus:ring-yellow-400"
 							/>
 						</div>
@@ -51,7 +49,7 @@ function CategorySearch() {
 							type="submit"
 							className="group mt-4 flex w-full items-center justify-center gap-2 rounded-md bg-rose-600 px-5 py-3 text-white transition focus:outline-none focus:ring focus:ring-yellow-400 sm:mt-0 sm:w-auto"
 						>
-							<span className="text-sm font-medium"> Sign Up </span>
+							<span className="text-sm font-medium"> Đăng kí </span>
 
 							<svg
 								className="size-5 rtl:rotate-180"

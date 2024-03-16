@@ -8,14 +8,14 @@ function DoctorSection({ dataDoctor, heading }) {
 	return (
 		<div className="mb-10 p-4 bg-white">
 			<h2 className="text-2xl font-bold text-gray-900 md:text-3xl my-5">
-				{heading}
+				{heading }
 			</h2>
 			<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-4 ">
 				{dataDoctor?.length > 0 ? (
 					dataDoctor?.map((doctor, index) => (
 						<div
 							key={index}
-							className=" border-[1px] rounded-lg flex flex-col gap-2 p-2 shadow-md hover:bg-blue-100 cursor-pointer"
+							className=" border-[1px] rounded-lg flex flex-col gap-2 p-2 shadow-md  cursor-pointer"
 						>
 							<Image
 								src={doctor?.attributes?.image?.data?.attributes?.url}
@@ -30,9 +30,9 @@ function DoctorSection({ dataDoctor, heading }) {
 							<div className="text-blue-600 font-bold">
 								{doctor?.attributes?.Address}
 							</div>
-							<Link href={"https://booking-doctor-app.vercel.app/details/" + doctor?.id}>
+							<Link href={"http://localhost:3000/"&&"https://booking-doctor-app.vercel.app/details/" + doctor?.id}>
 								<Button className="w-full bg-transparent text-blue-600 rounded-lg border-blue-700 border-[1px] hover:bg-blue-500 hover:text-white">
-									Book now
+									Hẹn lịch
 								</Button>
 							</Link>
 						</div>

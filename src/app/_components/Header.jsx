@@ -13,17 +13,17 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "@/components/ui/popover";
+import {  usePathname } from "next/navigation";
 
 function Header() {
 	const { user } = useKindeBrowserClient();
-
-	useEffect(() => {
-		// console.log(user);
-	}, [user]);
+	const param = usePathname();
+	// console.log(param);
+	useEffect(() => {}, [user]);
 	const Menu = [
-		{ id: 1, name: "Home", path: "/" },
-		{ id: 2, name: "Doctors", path: "/search" },
-		{ id: 3, name: "Contact", path: "/contact" },
+		{ id: 1, name: "Trang chủ", path: "/" },
+		{ id: 2, name: "Bác sĩ", path: "/search" },
+		{ id: 3, name: "Liên lạc", path: "/contact" },
 	];
 	return (
 		<div className="flex items-center justify-between p-4">
@@ -41,7 +41,11 @@ function Header() {
 				<ul className="gap-8 hidden md:flex">
 					{Menu.map((item, index) => (
 						<Link href={item.path} key={index}>
-							<li className="hover:text-red-400 cursor-pointer hover:ease-in-out transition-all hover:scale-110">
+							<li
+								className={`hover:text-red-400 cursor-pointer hover:ease-in-out transition-all  underline-offset-4 ${
+									param === item.path ? "underline" : "no-underline"
+								} `}
+							>
 								{item.name}
 							</li>
 						</Link>
@@ -65,14 +69,14 @@ function Header() {
 						</PopoverTrigger>
 						<PopoverContent className="w-[44]">
 							<ul className="flex flex-col gap-2">
-								<li className="hover:bg-slate-200 p-2 rounded-md">Profile</li>
+								<li className="hover:bg-slate-200 p-2 rounded-md cursor-pointer">Hồ sơ</li>
 								<Link href={"/mybooking"}>
 									<li className="hover:bg-slate-200 p-2 rounded-md">
-										My booking
+										Lịch sử đặt chỗ
 									</li>
 								</Link>
 								<li className="hover:bg-slate-200 p-2 rounded-md">
-									<LogoutLink>Log out</LogoutLink>
+									<LogoutLink>Đăng xuất</LogoutLink>
 								</li>
 							</ul>
 						</PopoverContent>
@@ -81,7 +85,7 @@ function Header() {
 			) : (
 				<>
 					<LoginLink>
-						<Button>Sign in</Button>
+						<Button>Đăng nhập</Button>
 					</LoginLink>
 				</>
 			)}

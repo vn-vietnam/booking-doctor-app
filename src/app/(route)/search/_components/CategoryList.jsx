@@ -15,6 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useParams } from "next/navigation";
 
+
 function CategoryList() {
 	const param = useParams();
 	// console.log(param);

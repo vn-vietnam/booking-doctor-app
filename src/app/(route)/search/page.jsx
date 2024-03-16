@@ -20,7 +20,7 @@ function page() {
 	};
 	return (
 		<div className="border-[1px]  ml-3 rounded-lg p-4">
-			<DoctorSection dataDoctor={getCategory} heading="Doctors" />
+			<DoctorSection dataDoctor={getCategory} heading="Bác sĩ" />
 		</div>
 	);
 }

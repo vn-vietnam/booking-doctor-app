@@ -36,16 +36,16 @@ function BookingList({ type, dataBooking, updateBooking }) {
 
 	return (
 		<div>
-			<div className="uppercase text-3xl font-bold">{type}</div>
+			<div className="uppercase text-3xl my-5 font-bold">{type==='upcoming' ? "Mới đăng kí" : "Hết hạn"}</div>
 			<Table>
-				<TableCaption>A list of your recent booking.</TableCaption>
+				<TableCaption>Danh sách đăng kí lịch hẹn</TableCaption>
 				<TableHeader>
 					<TableRow>
 						<TableHead className="w-[100px]">ID</TableHead>
-						<TableHead>Date</TableHead>
-						<TableHead>Time</TableHead>
-						<TableHead className="">Doctor</TableHead>
-						<TableHead className="text-right">Cancel</TableHead>
+						<TableHead>Ngày</TableHead>
+						<TableHead>Thời gian</TableHead>
+						<TableHead className="">Bác sĩ</TableHead>
+						<TableHead className="text-right">Tính năng</TableHead>
 					</TableRow>
 				</TableHeader>
 				<TableBody>
@@ -64,32 +64,30 @@ function BookingList({ type, dataBooking, updateBooking }) {
 								{type === "upcoming" ? (
 									<AlertDialog>
 										<AlertDialogTrigger className="border-[1px] p-2 rounded-lg hover:bg-slate-400">
-											Cancel
+											Hủy
 										</AlertDialogTrigger>
 										<AlertDialogContent>
 											<AlertDialogHeader>
 												<AlertDialogTitle>
-													Are you want to delete your booking?
+													Bạn có chắc là hủy lịch hẹn này?
 												</AlertDialogTitle>
 												<AlertDialogDescription>
-													This action cannot be undone. This will permanently
-													delete your account and remove your data from our
-													servers.
+													Cảnh báo hành động này sẽ không được thực hiện lại. 
 												</AlertDialogDescription>
 											</AlertDialogHeader>
 											<AlertDialogFooter>
-												<AlertDialogCancel>Cancel</AlertDialogCancel>
+												<AlertDialogCancel>Quay lại</AlertDialogCancel>
 												<AlertDialogAction
 													onClick={() => onContinueClick(e.id)}
 													className="border-[1px] p-2 rounded-lg bg-red-500 hover:bg-red-400"
 												>
-													Continue
+													Tiếp tục
 												</AlertDialogAction>
 											</AlertDialogFooter>
 										</AlertDialogContent>
 									</AlertDialog>
 								) : (
-									<Button>Expired</Button>
+									<Button>Hết hạn</Button>
 								)}
 
 								{/* alert */}

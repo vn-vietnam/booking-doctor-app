@@ -1,21 +1,27 @@
-import { Inter, Outfit } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import Menu from "@/components/menu";
 import Header from "./_components/Header";
 import Footer from "./_components/Footer";
 import { Toaster } from "@/components/ui/sonner";
 
-const outfit = Outfit({ subsets: ["latin"] });
+const be_Vietnam_Pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: "400" });
 
 export const metadata = {
-	title: "Booking App",
-	description: "Booking next app",
+	title: "Ứng dụng Đặt lịch khám bệnh",
+	description: "Ứng dụng Thuê bác sĩ tiện lợi, nhanh chóng và miễn phí",
+	icons: {
+		icon: "/logo.svg", // /public path
+	},
 };
 
 export default function RootLayout({ children }) {
 	return (
 		<html lang="en">
-			<body className={outfit.className} suppressHydrationWarning={true}>
+			<body
+				className={be_Vietnam_Pro.className}
+				suppressHydrationWarning={true}
+			>
 				<div className="md:px-20">
 					{/* <Menu /> */}
 					<Header />

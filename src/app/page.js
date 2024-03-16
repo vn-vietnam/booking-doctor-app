@@ -24,7 +24,7 @@ export default function Home() {
 			<div className="">
 				<Hero />
 				<CategorySearch />
-				<DoctorSection dataDoctor={doctorList} heading="Popular Doctors"/>
+				<DoctorSection dataDoctor={doctorList} heading="Bác sĩ đầu ngành"/>
 				{/* <p>hello world</p> */}
 			</div>
 		</>
