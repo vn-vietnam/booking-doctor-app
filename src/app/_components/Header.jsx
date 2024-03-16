@@ -13,7 +13,7 @@ import {
 	PopoverContent,
 	PopoverTrigger,
 } from "@/components/ui/popover";
-import {  usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 function Header() {
 	const { user } = useKindeBrowserClient();
@@ -69,7 +69,9 @@ function Header() {
 						</PopoverTrigger>
 						<PopoverContent className="w-[44]">
 							<ul className="flex flex-col gap-2">
-								<li className="hover:bg-slate-200 p-2 rounded-md cursor-pointer">Hồ sơ</li>
+								<li className="hover:bg-slate-200 p-2 rounded-md cursor-pointer">
+									Hồ sơ
+								</li>
 								<Link href={"/mybooking"}>
 									<li className="hover:bg-slate-200 p-2 rounded-md">
 										Lịch sử đặt chỗ

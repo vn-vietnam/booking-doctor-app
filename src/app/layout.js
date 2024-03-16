@@ -22,8 +22,10 @@ export default function RootLayout({ children }) {
 				className={be_Vietnam_Pro.className}
 				suppressHydrationWarning={true}
 			>
+				<div className="w-full bg-red-500 p-2 text-center">Sever free nên vui lòng đợi 5-10p trang sẽ được cập nhật</div>
 				<div className="md:px-20">
 					{/* <Menu /> */}
+
 					<Header />
 					{children}
 					<Toaster />

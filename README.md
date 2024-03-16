@@ -1,4 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Booking-doctor project
+
+![My Image](./public/1.png)
+![My Image](./public/2.png)
+![My Image](./public/3.png)
+![My Image](./public/4.png)
+![My Image](./public/5.png)
+
+## Teach
+
+Frontend: `Nextjs`, `Tailwindcss`
+
+Backend: [Strapi](https://booking-admin-c8dc.onrender.com/)
+
+Deploy: `Render` + `Vercel`
 
 ## Getting Started
 
